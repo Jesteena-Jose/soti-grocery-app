@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <h4 class="text-center">Subcategories</h4>
+            <ul class="list-group" *ngFor="let subcategory of subcategories" ><br>
+              <div (click)="getsubcategory(subcategory.subId)">
+                <!-- <a href="{{'/products/sub/'+subcategory.catId+'/'+subcategory.subId}}"> -->
+                <li class="list-group-item list-group-item-success list-group-item-action" aria-current="true">
+                  {{subcategory.subName}}</li>
+                  <!-- </a> -->
+              </div>
+              </ul>
+        </div>
+        <div class="col-lg-9">
+            <h4 class="text-center">Products</h4>
+            <br>
+            <div class="row">
+                <div class="card" style="width:20rem;margin: 20px;cursor: pointer;" *ngFor="let product of products">
+                    <div (click)="productdetailhandler(product._id)">
+                    <img src="{{ _image_url+product.image }}" class="card-img-top" width="150" height="150" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-text text-center">{{product.productName}}</h5>
+                        <h6 class="card-text text-center">Price : {{product.price|currency:'INR'}}</h6>
+                        <h6 class="card-text text-center"><del>MRP : {{product.mrp|currency:'INR'}}</del></h6>
+                        <!-- <p class="card-text text-center">{{product.description}}</p> -->
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>

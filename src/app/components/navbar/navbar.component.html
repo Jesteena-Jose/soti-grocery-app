@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-basket-fill text-center"
+    viewBox="0 0 16 16">
+    <path
+      d="M5.071 1.243a.5.5 0 0 1 .858.514L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 6h1.717L5.07 1.243zM3.5 10.5a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3zm2.5 0a.5.5 0 1 0-1 0v3a.5.5 0 0 0 1 0v-3z" />
+  </svg>
+  <h5 class="navbar-brand">Grocery Products</h5>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item active">
+        <a class="nav-link" routerLink="/products">Products</a>
+      </li> -->
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/contact">Contacts</a>
+      </li>
+      <!-- <li class="nav-item active">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/register">Register</a>
+      </li> -->
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+    <div class="d-inline-flex my-2 my-lg-0" *ngIf="!loginValue">
+      <a class="nav-link text-light mr-sm-2" routerLink="/login">Login</a>
+      <a class="nav-link text-light my-2 my-sm-0" routerLink="/register">Register</a>
+    </div>
+    <div class="d-inline-flex my-2 my-lg-0" *ngIf="loginValue">
+      <h5 class="navbar-brand">Hello,{{name}}</h5>
+      <a class="nav-link text-light mr-sm-2" routerLink="/home" (click)="logout()">Logout</a>
+    </div>
+  </div>
+</nav>

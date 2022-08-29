@@ -1,0 +1,14 @@
+<br>
+<br>
+<h4 class="text-center">All Categories</h4>
+    <br>
+   <div class="row">
+    <div class="card"  style="width:20rem;margin: 20px;cursor: pointer;"  *ngFor="let category of categories">
+      <div (click)="selectcategory(category.catId)">
+        <img src="{{ _image_url+category.catImage }}" class="card-img-top" width="150" height="150" alt="..." >
+        <div class="card-body">
+          <h5 class="card-text text-center">{{category.catName}}</h5>
+        </div>
+      </div>
+    </div>
+   </div>

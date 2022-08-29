@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<div class="container" id="container">
+    <br>
+    <div class="row shadow-lg p-3 mb-5 bg-white rounded border">
+        <div class="col-lg-6"><img src="{{ _image_url+product.image }}" alt="" width="100%" class="img-fluid"></div>
+        <div class="col-lg-6">
+            <h2>{{product.productName}}</h2><hr>
+            <h5>{{product.description}}</h5>
+            <h4>Price : {{product.price| currency:'INR'}}</h4>
+            <h4>MRP : {{product.mrp| currency:'INR'}}</h4>
+            <h5>Units : {{product.unit}}</h5>
+            <button class="btn btn-success">Add to cart</button>
+        </div>
+    </div>
+</div>
